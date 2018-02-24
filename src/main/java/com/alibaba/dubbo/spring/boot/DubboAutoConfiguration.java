@@ -1,15 +1,13 @@
 package com.alibaba.dubbo.spring.boot;
 
+import com.alibaba.dubbo.config.ApplicationConfig;
+import com.alibaba.dubbo.config.ProtocolConfig;
+import com.alibaba.dubbo.config.RegistryConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import com.alibaba.dubbo.config.ApplicationConfig;
-import com.alibaba.dubbo.config.ProtocolConfig;
-import com.alibaba.dubbo.config.RegistryConfig;
-import com.alibaba.dubbo.spring.boot.health.DubboHealthIndicator;
 
 /**
  * Dubbo common configuration
@@ -52,8 +50,4 @@ public class DubboAutoConfiguration {
     return registryConfig;
   }
 
-  @Bean
-  public DubboHealthIndicator dubboHealthIndicator() {
-    return new DubboHealthIndicator();
-  }
 }
